@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - Entry point
+ * main - It's for use puts
  *
  * Return: Always 0 (Success)
  */
