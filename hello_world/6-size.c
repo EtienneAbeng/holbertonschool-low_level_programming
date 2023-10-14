@@ -7,6 +7,12 @@
  */
 int main(void)
 {
+	/**
+	 * char represent the character
+	 * int represent the integer
+	 * long int represent the lenght of integer
+	 * long long in represent the long lenght integer
+	 */
 	char a;
 	int b;
 	long int c;
