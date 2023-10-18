@@ -1,17 +1,16 @@
-#include <stdio.h>
-/**
- * main - write a program that prints _putchar.
- *
- * Return: 0 (sucess).
- */
+#include "main.h"
 
-int main(void)
+int main()
 {
-	char prints;
-
-	prints = putchar;
-
-	printf("%c\n", prints);
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+	_putchar('\n');
 
 	return (0);
 }
