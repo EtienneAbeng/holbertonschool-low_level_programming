@@ -1,6 +1,11 @@
 #include "main.h"
 
-int main()
+/**
+ * main - print a character with _putchar.
+ *
+ */
+
+int main(void)
 {
 	_putchar('_');
 	_putchar('p');
