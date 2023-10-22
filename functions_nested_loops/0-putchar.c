@@ -7,7 +7,7 @@
 
 int main(void)
 {
-/* How to use putchar to prints a character*/
+/* How to use putchar to prints a character */
 
 	_putchar('_');
 	_putchar('p');
@@ -18,6 +18,6 @@ int main(void)
 	_putchar('a');
 	_putchar('r');
 	_putchar('\n');
-
+/* return 0 when execution is finish */
 	return (0);
 }
