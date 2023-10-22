@@ -4,26 +4,28 @@
  *
  * return : Always 0.
  */
-void times_table(void)
+oid times_table(void)
 {
-	int table;
-	int number;
-	int result;
+    int i, j;
 
-	for (table = 0; table < 9; table++)
-	{
-		for (number = 0; number < 9; number++)
-		{
-			if (result = table * number)
-			{
-				_putchar(result + '0');
-				
-				_putchar(';');
-			}
-			_putchar(number + '0');
+    for (i = 0; i <= 9; i++) {
+        for (j = 0; j <= 9; j++) {
+            int result = i * j;
 
-			_putchar(table + '0');
+            if (result < 10) {
+                putchar(' '); // Ajoute un espace pour la lisibilité (chiffre des unités)
+                putchar(result + '0'); // Affiche le résultat en tant que caractère
+            } else {
+                putchar((result / 10) + '0'); // Affiche le chiffre des dizaines
+                putchar((result % 10) + '0'); // Affiche le chiffre des unités
+            }
 
-		}
-	}
+            if (j < 9) {
+                putchar(',');
+                putchar(' ');
+            }
+        }
+
+        putchar('\n');
+    }
 }
