@@ -1,12 +1,14 @@
 #include "main.h"
-
 /**
- * main - print a character with _putchar.
+ * _putchar - print a character with _putchar.
  *
+ * return : Always 0 (sucess).
  */
 
 int main(void)
 {
+/* How to use putchar to prints a character*/
+
 	_putchar('_');
 	_putchar('p');
 	_putchar('u');
