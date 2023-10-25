@@ -3,11 +3,10 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- * _strlen - A function that return the length of a string.
+ * _strlen - Calcul the length of a string.
+ * @s: the string to be measured.
  *
- * @s: Return the length
- *
- * Return - Length of @_strlen.
+ * Return - Length of the string.
  */
 	int _strlen(char *s)
 {
