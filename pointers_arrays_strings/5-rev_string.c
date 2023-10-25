@@ -3,7 +3,7 @@
 /**
  * rev_string - reverses a string.
  *
- * @s - reverse a string write normaly to reverse.
+ * @s: reverse a string write normaly to reverse.
  *
  * Return:  0 Always.
  */
@@ -19,7 +19,8 @@ void rev_string(char *s)
 
 	}
 
-		reverse = length -1;
+	reverse = length -1;
+
 	for (i = 0; i <= length / 2; i++)
 	{
 		temp = s[i];
