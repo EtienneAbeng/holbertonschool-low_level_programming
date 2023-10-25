@@ -3,7 +3,9 @@
 /**
  * Swap - A function that swaps the values of two integer.
  *
- * Return: The variable A and B are not the same that depart.
+ * @swap - interchange the variable
+ * @'a' - parameter 'a' take a value of 'b'.
+ * @'b' - parameter 'b' take a value of 'a'.
  */
 
 void swap_int(int *a, int *b)
