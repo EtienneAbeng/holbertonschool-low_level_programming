@@ -3,13 +3,14 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- * Sterlen - A function that return the length of a string.
+ * _sterlen - A function that return the length of a string.
  *
  * @*s: Return the length 
  *
- * Return - Always 0.
+ *
+ * Return - Length of @s.
  */
-int _strlen(char *s)
+	int _strlen(char *s)
 {
 	int index;
 
