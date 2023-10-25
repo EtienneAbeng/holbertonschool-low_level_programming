@@ -3,9 +3,9 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- * _sterlen - A function that return the length of a string.
+ * _strlen - A function that return the length of a string.
  *
- * @*s: Return the length
+ * @s: Return the length
  *
  * Return - Length of @s.
  */
@@ -13,7 +13,7 @@
 {
 	int index;
 
-	for(index = 0; s[index] != '\0'; index++)
+	for (index = 0; s[index] != '\0'; index++)
 	{
 
 	}
