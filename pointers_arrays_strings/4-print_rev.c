@@ -2,7 +2,7 @@
 /**
  * Reverse - Prints a string, in reverse, followed a new line.
  *
- * @_rev prints the string in reverse
+ * @_rev prints the string in reverse.
  */
 void print_rev(char *s)
 {
@@ -11,7 +11,7 @@ void print_rev(char *s)
 
 	for (length = 0; s[length] != '\0'; length++)
 	{
-	
+
 	}
 
 	for (reverse = length -1; reverse >= 0 ; reverse--)
@@ -21,15 +21,3 @@ void print_rev(char *s)
 
 	_putchar('\n');
 }
-/**int length = 0;
-while(*(s + length) != '\0')
-	length++;
-{
-	int reverse;
-	for(reverse = length - 1; reverse >= '\0'; reverse--)
-		printf("%c", *(s + reverse));
-}
-printf("\n");
-}*/
-
-

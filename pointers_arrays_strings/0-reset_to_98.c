@@ -3,7 +3,9 @@
 /**
  * 98 Battery st - A pointer to an int as parameter and updates the value.
  *
- * Return - To get reset to 98.
+ * @n: A pointeur to variable.  
+ * 
+ * 
  */
 void reset_to_98(int *n)
 {

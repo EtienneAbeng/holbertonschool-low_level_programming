@@ -5,6 +5,8 @@
 /**
  * Sterlen - A function that return the length of a string.
  *
+ * @*s: Return the length 
+ *
  * Return - Always 0.
  */
 int _strlen(char *s)

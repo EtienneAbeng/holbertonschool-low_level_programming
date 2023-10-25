@@ -9,7 +9,7 @@
  */
 void _puts(char *str)
 {
-int index;
+	int index;
 
 	for (index = 0; str[index] != '\0'; index++)
 	{
