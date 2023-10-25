@@ -5,8 +5,7 @@
 /**
  * _sterlen - A function that return the length of a string.
  *
- * @*s: Return the length 
- *
+ * @*s: Return the length
  *
  * Return - Length of @s.
  */
