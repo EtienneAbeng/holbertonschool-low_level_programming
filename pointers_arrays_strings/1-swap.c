@@ -7,7 +7,7 @@
  *
  * @b: pointer to the second integer.
  *
- * This function swaps the values of the two integer pointed.
+ * @swap_int This function swaps the values of the two integer pointed.
  */
 
 void swap_int(int *a, int *b)
