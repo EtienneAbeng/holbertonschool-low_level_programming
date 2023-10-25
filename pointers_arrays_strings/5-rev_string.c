@@ -1,11 +1,11 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * Reverse string - reverses a string.
+ * rev_string - reverses a string.
  *
- * @_rev - reverse a string write normaly to reverse.
+ * @s - reverse a string write normaly to reverse.
  *
- * Return:  0.
+ * Return:  0 Always.
  */
 void rev_string(char *s)
 {
