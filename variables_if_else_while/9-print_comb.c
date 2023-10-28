@@ -4,22 +4,21 @@
  *
  * Return: 0 (sucess).
  */
-
 int main(void)
 {
-	int number;
+	char number = 0;
 
-	for (number = 0; number <= 9; number++)
+	while (number <= 9)
 	{
 		putchar('0' + number);
-		putchar (',');
-
-		if (number == 9)
+		if (number < 9)
 		{
-			putchar('9' + ('$'));
+			putchar(',');
+			putchar(' ');
 		}
+		number++;
 	}
-		putchar('\n');
+	putchar('\n');
 
 	return (0);
 }
