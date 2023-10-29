@@ -20,14 +20,15 @@ void puts_half(char *str)
 
 	/*Calculate the starting positon for the second half.*/
 	/* the starting position for the second half, from the 6th.*/
-	if  (length % 2 == 0)
+	if (length % 2 == 0)
 	{
-		half = length / 2;
-	}
-
-	else
-	{
-		half = (length + 1) / 2;
+		int = i;
+		
+		while (i > length / 2)
+		{
+			_putchar(str[i]);
+		i++;
+		}
 	}
 
 	/*Print the second half of the string (including digits).*/

@@ -1,9 +1,13 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * strcy - Copies the string pointed to by src inclued the terminating null.
+ * _strcpy - Copies the string pointed to by src inclued the terminating null.
+ *
  * @dest: The destination.
+ *
  * @src: The source string.
+ *
+ * return - Pointer return the string that find in  @dest
  */
 char *_strcpy(char *dest, char *src)
 {
@@ -23,12 +27,12 @@ char *_strcpy(char *dest, char *src)
 
 		i++;
 	}
-	/*include the terminated null character.*/
-	/*En placant *dest = '\0'; en dehors de la boucle, nous nous assurons
-	 * que la destination contient une chaine de caractere correctement
-	 * que la chaîne résultante soit valide et que les fonctions de
-	 * manipulation de chaine puissent fonctionner correctement avec
-	 * la manipulation */
+	/* include the terminated null character.*/
+	/* En placant *dest = '\0'; en dehors de la boucle, nous nous assurons*/
+	/* que la destination contient une chaine de caractere correctement*/
+	/* que la chaîne résultante soit valide et que les fonctions de*/
+	/* manipulation de chaine puissent fonctionner correctement avec*/
+	/* la manipulation */
 
 	dest[i] = '\0';
 	/* The destiantion is returned by standard 'strcpy()'*/
