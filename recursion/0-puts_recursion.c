@@ -4,7 +4,6 @@
  *
  * @puts: Prints the string.
  * @s: prints the string.
- *
  * return always (0);
  */
 void _puts_recursion(char *s)
@@ -19,6 +18,6 @@ void _puts_recursion(char *s)
 	{
 		_putchar(*s);
 		_puts_recursion(s + 1);
-	}	
+	}
 
 }

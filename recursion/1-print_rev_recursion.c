@@ -2,13 +2,14 @@
 /**
  * _print_rev_recursion - function that print the string reverse.
  *
- * @*s: A pointer 
+ *@*s: the strings to be reverse
  *
  */
 void _print_rev_recursion(char *s)
 {
 	if (*s != '\0')
-	
+	{
 	_print_rev_recursion(s + 1);
 	_putchar(*s);
+	}
 }
