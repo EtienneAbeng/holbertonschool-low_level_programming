@@ -1,6 +1,8 @@
 #include "main.h"
 /**
  * main - Entry point for the _putchar program.
+ * 
+ * Description : prints the words "_putchar" followed be a newline character.
  *
  * return : Always 0 (sucess).
  */

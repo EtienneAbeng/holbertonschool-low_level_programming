@@ -2,6 +2,9 @@
 /**
  * print_alphabet - Prints the alphabet in lowercase 10 times.
  *
+ * Description :
+ * Each line containinng the entire alphabet from 'a' to 'z'.
+ *
  * Return: void
  */
 
