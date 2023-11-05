@@ -1,0 +1,21 @@
+# Makefile for compiling "school" program
+
+# Compiler and compiler flags
+CC = gcc
+
+# Sources files and objet files
+SRC =	main.c school.c
+
+# Executable name
+EXECUTABLE = school
+
+# Default rule to build the executable
+all:	$(EXECUTABLE)
+
+# Rules to build the executable
+$(EXECUTABLE):	$(SRC)
+	$(CC) -o $@ $^
+
+# Clean rules to remove generated files
+clean:
+	rm -f $(EXECUTABLE)

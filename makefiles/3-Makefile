@@ -1,0 +1,34 @@
+# Makefile for compiling "school" program
+
+# Compiler and compiler flags
+CC = gcc
+
+# Sources files and objet files
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+
+# Executable name
+NAME = school
+
+# Command to delete files
+RM = rm -f
+
+# Rules
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) -o $@ $^
+
+# Clean, pour nettoyer les fichiers temporaires
+clean:
+	$(RM) *~ $(NAME)
+
+# Régle pour supprimer les fichiers objets
+oclean:
+	$(RM) $(OBJ)
+
+# Régle pour nettoyer complétement (fichier temporaire et executable)
+fclean: clean oclean
+
+# Régle pour forcer la récompilation de tout les fichiers
+re: fclean all

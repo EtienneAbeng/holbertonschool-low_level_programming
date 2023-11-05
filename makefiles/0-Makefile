@@ -1,0 +1,15 @@
+# Rule "all" to build the "school" executable
+all: school
+
+# Rule to compile the source files and create the executable
+school: main.c school.c
+	gcc main.c school.c -o school
+
+# Rule to compile a .c file to a .o file
+.c.o:
+	gcc -c $<
+
+# Rule "clean" to remove the executable and object files
+clean:
+	rm -f school main.o school.o
+
