@@ -16,7 +16,7 @@ char *_strdup(char *str)
 {
 	char *duplic;
 	unsigned int length;
-	unsigned int i; 
+	unsigned int i;
 
 	if (str == NULL)
 	{
@@ -28,10 +28,10 @@ char *_strdup(char *str)
 	{
 		length++;
 	}
-	
-	/* length + 1 : Pour garantir que nous avons suffisamment d'espace pour stocker
-	 * tous les caractères de la chaîne, nous ajoutons 1 pour inclure
-	 *  le caractère nul de fin de chaîne ('\0').*/
+
+	/* length + 1: Pour garantir que nous avons assez d'espace pour stocker */
+	/* tous les caractères de la chaîne, nous ajoutons 1 pour inclure */
+	/*  le caractère nul de fin de chaîne ('\0').*/
 	 duplic = (char *) malloc(sizeof(char) * (length + 1));
 
 	if (duplic == NULL)
