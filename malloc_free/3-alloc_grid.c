@@ -5,27 +5,51 @@
  * alloc_grid - A functions that returns a pointer to 2 dimensial array
  * of integers and each element of the grid should be initializes to 0.
  *
- * @width: is negative, return @NULL
- * @height: is negaative, return @NULL
+ * @width: width of the grid
+ * @height: height of the grid
  *
- * Return:  
+ * Return: pointer to the allocated grid of NULL on failure
  */
 int **alloc_grid(int width, int height)
 {
-	unsigned int i;
-	unsigned int j;
+	int **grid;
+	int i;
+	int j;
 
-	if (width == NULL)
+	if ((width <= 0) || (height <= 0))
 	{
 		return (NULL);
 	}
-	**alloc_grid(malloc(int) * width);
 
-	if (height == NULL);
+	grid = (int **)malloc(sizeof(int *) * height);
+
+	if (grid == NULL)
 	{
 		return (NULL);
 	}
-	**alloc_grid(malloc(int) * height);
-	
-	
+
+	for (i = 0; i < height; i++)
+	{
+		grid[i] = (int *)malloc(sizeof(int) * width);
+		if (grid[i] == NULL)
+		{
+			for (j = 0; j < i; j++)
+			{
+				free(grid[j]);
+			}
+
+			free(grid);
+			return (NULL);
+		}
+	}
+
+	for (i = 0; i < height; i++)
+	{
+		for (j = 0; j < width; j++)
+		{
+			grid[i][j] = 0;
+		}
+	}
+
+	return (grid);
 }
