@@ -1,34 +1,34 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
 /**
- * strcat - Concatenates
+ * _strcat - Function similar to the _strcat except that use most byte.
  *
- * @dest: string destination.
+ * @dest: The destination of string.
+ * @src: does not need to be null if it contains n or more bytes.
  *
- * @src: the source string.
- *
- * return: A pointer.
+ * Return - a pointer to the resulting string @dest
  */
-char *_strcat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
-	int i;
-	int j;
+        char *ptr = dest;
 
-	/*Find the end of the string of dest*/
-	for (i = 0; dest[i] != '\0'; i++)
-	{
+        /*Find the end of the string of destination)*/
 
-	}
-	/*Concatene the string at the end of dest*/
+        while (*dest != '\0')
+        {
+                dest++;
+        }
 
-	for (j = 0; src[j] != '\0'; j++)
-	{
-		dest[j + i] = src[j];
-	}
+        /* Concatenate  of string @src*/
 
-	/* Add the character NULL('\0') in end*/
-	dest[i + j] = '\0';
+        while (*src != '\0')
+        {
+                *dest = *src;
+                dest++;
+                src++;
+        }
 
-	return (dest);
+        /*Check the @dest destination is null is found.*/
+        *dest = '\0';
+
+        return (ptr);
 }
