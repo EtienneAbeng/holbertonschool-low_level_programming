@@ -12,7 +12,7 @@ char *leet(char *s)
 	int j;
 	char letre[5] = {'A', 'E', 'O', 'T', 'L'};
 	char chifre[5] = {'4', '3', '0', '7', '1'};
-	
+
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		for (j = 0; j < 5; j++)
@@ -21,7 +21,7 @@ char *leet(char *s)
 			{
 				s[i] = chifre[j];
 			}
-		
+	
 		}
 	}
 	return (s);
