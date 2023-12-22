@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * 98 Battery street - a function printd all natural numbers from n to 98.
- *
+ * @n: The starting number.
  * Return: Always 0.
  */
 
