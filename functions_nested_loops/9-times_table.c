@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * times_table - Prints the multiplication table for 9, starting from 0
  *
@@ -8,42 +9,36 @@
  */
 void times_table(void)
 {
-	int i;
-	int j;
-	int result;
+	int i, j, result;
 	
-	for (i = 0; i <= 9; i++) 
+	for (i = 0; i <= 9; i++)
 	{
 		for (j = 0; j <= 9; j++)
 		{
 			result = i * j;
 
+			/* Format the output based on the value of 'result' */
 			if (result < 10)
 			{
-				if (result < 10)
+				if (j > 0)
 				{
-				/* Ajoute un espace pour la lisibilité (chiffre des unités)*/
-				_putchar(' ');
-				_putchar(' ');
+					_putchar(' ');
+					_putchar(' '); /* Add spaces for alignment (units digit) */
 				}
-				_putchar (0);
-				/* Affiche le résultat en tant que caractère*/
-				_putchar(result + '0');
+				_putchar(result + '0'); /* Display the result as a character */
 			}
 			else
 			{
-				 /*Affiche le chiffre des dizaines*/
-				_putchar((result / 10) + '0');
-				/* Affiche le chiffre des unités*/
-				_putchar((result % 10) + '0');
+				_putchar((result / 10) + '0'); /* Display the tens digit */
+				_putchar((result % 10) + '0'); /* Display the units digit */
 			}
+			/* Add comma and space if not at the end of the line */
 			if (j < 9)
 			{
 				_putchar(',');
 				_putchar(' ');
 			}
 		}
-		
-		_putchar('\n');
+		_putchar('\n'); /* Move to the next line after each row */
 	}
 }
