@@ -1,19 +1,43 @@
-CC = gcc
-SRC = main.c holberton.c
-OBJ = $(SRC:.c=.o) 
-NAME = holberton
-RM = rm -f
-CFLAGS = -Wall -Werror -Wextra -pedantic
+# Makefile for the school project
 
-all: $(OBJ)
-	$(CC) $(CLFAGS) $(OBJ) -o $(NAME)
+# Compiler
+CC := gcc
 
+# Source files
+SRC := main.c school.c
+
+# Object files
+OBJ := $(SRC:.c=.o)
+
+# Executable name
+NAME := school
+
+# Program to delete files
+RM := /bin/rm -f
+
+# Compiler flags
+CFLAGS := -Wall -Werror -Wextra -pedantic
+
+# Rule to build the executable
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+# Rule to compile source files into object files
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Rules to clean files
 clean:
-	$(RM) *~ $(NAME)
-
-oclean:
 	$(RM) $(OBJ)
 
-fclean: clean oclean
+oclean: clean
+
+fclean: clean
+	$(RM) $(NAME)
 
 re: fclean all
+
+.PHONY: all clean oclean fclean re
+
