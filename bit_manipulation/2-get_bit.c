@@ -17,7 +17,7 @@ int get_bit(unsigned long int n, unsigned int index)
 	if (index >= (sizeof(unsigned long int) * 8))
 		return (-1);
 
-/*Shift the bits to the right by the index, then use a bitwise AND 
+/*Shift the bits to the right by the index, then use a bitwise AND
   with 1This isolates the bit at the specified index*/
 	bit = (n >> index) & 1;
 	return (bit);
