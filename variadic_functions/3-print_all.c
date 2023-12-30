@@ -1,59 +1,96 @@
 #include "variadic_functions.h"
-#include <stdarg.h>
 #include <stdio.h>
+#include <stdarg.h>
+
+/* Déclaration de la structure pick_al */
+typedef struct pick_all 
+{
+	char let;
+	void (*f)(va_list);
+} pick_al;
 
 /**
- * print_all - Print anything based on the format.
- * @format: A string that represents the types of arguments.
- *         c: char, i: integer, f: float, s: char*.
+ * print_int - Imprime un entier.
+ * @list: Liste d'arguments variables.
  */
+void print_int(va_list list)
+{
+	printf("%d", va_arg(list, int));
+}
 
+/**
+ * print_char - Imprime un caractère.
+ * @list: Liste d'arguments variables.
+ */
+void print_char(va_list list)
+{
+	printf("%c", va_arg(list, int));
+}
+
+/**
+ * print_float - Imprime un nombre à virgule flottante.
+ * @list: Liste d'arguments variables.
+ */
+void print_float(va_list list)
+{
+	printf("%f", va_arg(list, double));
+}
+
+/**
+ * print_string - Imprime une chaîne de caractères.
+ * @list: Liste d'arguments variables.
+ */
+void print_string(va_list list)
+{
+	char *st;
+	st = va_arg(list, char *);
+	if (st == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
+    printf("%s", st);
+}
+
+/**
+ * print_all - Imprime une liste d'arguments variables en fonction de la chaîne de format.
+ * @format: Chaîne de format.
+ * @...: Liste d'arguments variables.
+ */
 void print_all(const char * const format, ...)
 {
-	va_list args;
-	unsigned int i = 0;
-	char *str;
-	float f;
+	int i = 0;
+	int j = 0;
+	va_list list;
+	char *separator = "";
 
-	va_start(args, format);
-
-	while (format && format[i])
+    /* Déclaration et initialisation de la structure pick_al */
+	pick_al pik[] = 
 	{
-		/* Check if the format specifier is char */
-		if (format[i] == 'c')
+		{'c', print_char},
+		{'i', print_int},
+		{'f', print_float},
+		{'s', print_string},
+		{'\0', NULL}
+	};
+
+	va_start(list, format);
+
+	while (format != NULL && format[i] != '\0')
+	{
+		while (pik[j].let != '\0')
 		{
-			printf("%c, ", va_arg(args, int));
-		}
-		/* Check if the format specifier is integer */
-		else if (format[i] == 'i')
-		{
-			printf("%d, ", va_arg(args, int));
-		}
-		/* Check if the format specifier is float */
-		else if (format[i] == 'f')
-		{
-			f = va_arg(args, double);
-			printf("%f, ", f);
-		}
-		/* Check if the format specifier is string */
-		else if (format[i] == 's')
-		{
-		/* string is NULL print "(nil)", otherwise print the string */
-			str = va_arg(args, char *);
-			if (str == NULL)
+			if (pik[j].let == format[i])
 			{
-				printf("(nil)");
+				printf("%s", separator);
+				pik[j].f(list);
+				separator = ", ";
 			}
-			else
-			{
-				printf("%s, ", str);
-			}
+			j++;
 		}
-		/* Move to the next character in the format string */
 		i++;
 	}
+
+	va_end(list);
 	printf("\n");
-
-	va_end(args);
-
 }
