@@ -85,10 +85,12 @@ void print_all(const char * const format, ...)
 				printf("%s", separator);
 				pik[j].f(list);
 				separator = ", ";
+
 			}
 			j++;
 		}
 		i++;
+		separator = "";
 	}
 
 	va_end(list);
