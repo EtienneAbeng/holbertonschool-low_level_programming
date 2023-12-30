@@ -21,14 +21,14 @@ int sum_them_all(const unsigned int n, ...)
 
 	/* Initialize the list starting from the last fixed argument */
 	va_start(listCalcul, n);
-	
-	for (i = 0; i < n; i++)
+
+	for(i = 0; i < n; i++)
 	{
 		/* Add each integer to the sum */
-		sum = va_arg (listCalcul, int);
+		sum += va_arg (listCalcul, int);
 	}
 	/* Finalize the use of the list */
-	va_end (listCalcul);
+	va_end(listCalcul);
 	/* Return the sum of the integers */
 	return (sum);
 }

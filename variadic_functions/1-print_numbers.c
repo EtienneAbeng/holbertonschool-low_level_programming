@@ -29,9 +29,9 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 			/* Print the separator if not the last element */
 			printf("%s", separator);
 		}
-		/* Print a newline character at the end of the list */
-		printf("\n");
+
 	}
+	printf("\n");
 
 	va_end(printNumbers);
 }
