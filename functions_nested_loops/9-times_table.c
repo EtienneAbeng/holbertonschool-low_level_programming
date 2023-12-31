@@ -9,36 +9,32 @@
  */
 void times_table(void)
 {
-	int i, j, result;
-	
-	for (i = 0; i <= 9; i++)
-	{
-		for (j = 0; j <= 9; j++)
-		{
-			result = i * j;
+	int i, j, m;
 
-			/* Format the output based on the value of 'result' */
-			if (result < 10)
+	for (i = 0; i < 10; i++)
+	{
+		for (j = 0; j < 10; j++)
+		{
+			m = i * j;
+			if (j != 0)
 			{
-				if (j > 0)
+			_putchar(',');
+			_putchar(' ');
+			}
+			if (m < 10)
+			{
+				if (j != 0)
 				{
 					_putchar(' ');
-					_putchar(' '); /* Add spaces for alignment (units digit) */
 				}
-				_putchar(result + '0'); /* Display the result as a character */
+				_putchar(m + '0');
 			}
 			else
 			{
-				_putchar((result / 10) + '0'); /* Display the tens digit */
-				_putchar((result % 10) + '0'); /* Display the units digit */
-			}
-			/* Add comma and space if not at the end of the line */
-			if (j < 9)
-			{
-				_putchar(',');
-				_putchar(' ');
+			_putchar((m / 10) + '0');
+			_putchar((m % 10) + '0');
 			}
 		}
-		_putchar('\n'); /* Move to the next line after each row */
+		_putchar('\n');
 	}
 }
