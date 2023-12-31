@@ -18,22 +18,20 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(OBJ)
-        $(CC) $(CFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) -o $@ $^
 
 # Clean, pour nettoyer les fichiers temporaires
 clean:
-        $(RM) *~ $(NAME)
+	$(RM) *~ $(OBJ)
 
 # Rule to delete object files
 oclean:
-        $(RM) $(OBJ)
+	$(RM) $(OBJ)
 
 # Rule to clean completely (temporary files and executable)
 fclean: clean oclean
+	$(RM) $(NAME)
 
 # Rule to force recompilation of all files
 re: fclean all
-
-# Variables
-# (No need to specify variables CC, SRC, OBJ, NAME, RM, CFLAGS again as they are already defined above)
 
