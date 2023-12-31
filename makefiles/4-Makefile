@@ -1,43 +1,39 @@
-# Makefile for the school project
+# Makefile for compiling "school" program
 
-# Compiler
-CC := gcc
+# Compiler and compiler flags
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra -pedantic
 
-# Source files
-SRC := main.c school.c
-
-# Object files
-OBJ := $(SRC:.c=.o)
+# Sources files and object files
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
 
 # Executable name
-NAME := school
+NAME = school
 
-# Program to delete files
-RM := /bin/rm -f
+# Command to delete files
+RM = rm -f
 
-# Compiler flags
-CFLAGS := -Wall -Werror -Wextra -pedantic
-
-# Rule to build the executable
+# Rules
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+        $(CC) $(CFLAGS) -o $@ $^
 
-# Rule to compile source files into object files
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
-# Rules to clean files
+# Clean, pour nettoyer les fichiers temporaires
 clean:
-	$(RM) $(OBJ)
+        $(RM) *~ $(NAME)
 
-oclean: clean
+# Rule to delete object files
+oclean:
+        $(RM) $(OBJ)
 
-fclean: clean
-	$(RM) $(NAME)
+# Rule to clean completely (temporary files and executable)
+fclean: clean oclean
 
+# Rule to force recompilation of all files
 re: fclean all
 
-.PHONY: all clean oclean fclean re
+# Variables
+# (No need to specify variables CC, SRC, OBJ, NAME, RM, CFLAGS again as they are already defined above)
 
